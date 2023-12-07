@@ -35,8 +35,8 @@ func TestDay5(t *testing.T) {
 }
 
 func TestDay6(t *testing.T) {
-	testDayPart(t, 6, 1, "288")
-	testDayPart(t, 6, 2, "71503")
+	testDayPart(t, 6, 1, "288")   // 1312850
+	testDayPart(t, 6, 2, "71503") // 36749103
 }
 
 func testDayPart(t *testing.T, day int, part int, expected string) {
