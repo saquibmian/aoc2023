@@ -6,10 +6,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"time"
-
-	"golang.org/x/text/language"
-	"golang.org/x/text/message"
 )
 
 var day5part1 = RunFunc(func(input []string) string {
@@ -338,17 +334,12 @@ var day5part2 = RunFunc(func(input []string) string {
 	for i := 0; i < len(seedParts); i = i + 2 {
 		total += seedParts[i+1]
 	}
-	interval := total / 100
-	p := message.NewPrinter(language.English)
 	for i := 0; i < len(seedParts); i = i + 2 {
 		start, size := seedParts[i], seedParts[i+1]
 		for j := 0; j < size; j++ {
 			seed := start + j
 			done++
 			requests <- seed
-			if done%interval == 0 {
-				p.Printf("%s: done %d percent\n", time.Now(), done/interval)
-			}
 		}
 	}
 	close(requests)
