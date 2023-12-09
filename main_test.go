@@ -39,6 +39,11 @@ func TestDay6(t *testing.T) {
 	testDayPart(t, 6, 2, "71503") // 36749103
 }
 
+func TestDay7(t *testing.T) {
+	testDayPart(t, 7, 1, "6440") // 256448566
+	testDayPart(t, 7, 2, "5905") // 254412181
+}
+
 func testDayPart(t *testing.T, day int, part int, expected string) {
 	sampleData, err := os.ReadFile(fmt.Sprintf("samples/day%dpart%d.txt", day, part))
 	require.NoError(t, err)
