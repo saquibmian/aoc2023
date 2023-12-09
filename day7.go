@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"slices"
 	"strconv"
 	"strings"
@@ -122,25 +121,6 @@ var day7part2 = RunFunc(func(input []string) string {
 		bid   int
 	}
 	type handtype int
-	handtypeString := func(h handtype) string {
-		switch h {
-		case 7:
-			return "fiveOfAKind"
-		case 6:
-			return "fourOfAKind"
-		case 5:
-			return "fullHouse"
-		case 4:
-			return "threeOfAKind"
-		case 3:
-			return "twoPair"
-		case 2:
-			return "onePair"
-		case 1:
-			return "highCard"
-		}
-		panic("handtypestring")
-	}
 	const (
 		fiveOfAKind  handtype = 7
 		fourOfAKind  handtype = 6
@@ -239,9 +219,6 @@ var day7part2 = RunFunc(func(input []string) string {
 		}
 		return 0
 	})
-	for _, h := range hands {
-		fmt.Printf("%s %s\n", h.cards, handtypeString(getHandType(h)))
-	}
 	var total int
 	for rank, hand := range hands {
 		total += (hand.bid * (rank + 1))

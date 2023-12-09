@@ -36,6 +36,10 @@ var days = [][]RunFunc{
 		day7part1,
 		day7part2,
 	},
+	{
+		day8part1,
+		day8part2,
+	},
 }
 
 type RunFunc func(input []string) string
